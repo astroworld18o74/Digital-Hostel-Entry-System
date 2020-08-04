@@ -1,18 +1,18 @@
 <%@page language="java"  pageEncoding="ISO-8859-1"%>
-<%@page import="java.sql.DriverManager" %>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.PreparedStatement" %>
-<%@page import="java.sql.Statement" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@page import="java.util.* "%>
+<%@page import="java.sql.*" %>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<HEAD>
+
+
 <script type="text/javascript" src="engine1/jquery.js"></script>
-<style>
-.sa{
+<style> .sa{
   color: #131313;
     background-color: #e7e5e4;
     font-size:20px}
@@ -59,13 +59,14 @@
       -26px 52px 1px #dfdddc, 
       -27px 54px 1px #e2e0df, 
       -28px 56px 1px #e4e3e2;
-      }
-</style>
+  }</style>
+<!-- End WOWSlider.com HEAD section -->
+
 <SCRIPT type="text/javascript">
 	window.history.forward();
 	function noBack() { window.history.forward(); }
 </SCRIPT>
-</head>
+</HEAD>
 <BODY onload="noBack();" 
 	onpageshow="if (event.persisted) noBack();" onunload="">
 <%
@@ -89,8 +90,7 @@ else if(msg2==null && msg3==null && msg4!=null)
 <script type="text/javascript">
 alert("Wrong Login");</script>
 <%}%>
-<script type="text/javascript" src="engine1/wowslider.js"></script>
-<script type="text/javascript" src="engine1/script.js"></script>
+
 <%String s=request.getParameter("s");
 if(s==null){ %>
 <form action="adminguardlogin.jsp" method="get"> 
@@ -159,4 +159,4 @@ NIT Hamirpur website<br/>
 <br/> </div>
 </footer>
 </body>
-</html>
+</html> 
